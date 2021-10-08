@@ -5296,7 +5296,7 @@ static int _sde_crtc_check_zpos(struct drm_crtc_state *state,
 		}
 
 		/* verify z_pos setting before using it */
-		if ((z_pos >= SDE_STAGE_MAX - SDE_STAGE_0) && !cstate->fingerprint_dim_layer) {
+		if (z_pos >= SDE_STAGE_MAX - SDE_STAGE_0) {
 			SDE_ERROR("> %d plane stages assigned\n",
 					SDE_STAGE_MAX - SDE_STAGE_0);
 			return -EINVAL;
